@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portofolio Profesional Helmisari Dwi Putri, S.M. - Spesialis Komunikasi Pemasaran dengan pengalaman 7+ tahun dalam strategi merek, CRM, dan penggalangan dana daring.">
+    <meta name="author" content="Helmisari Dwi Putri">
+    <title>Helmisari Dwi Putri, S.M | Profesional Komunikasi Pemasaran</title>
+
+    <!-- Ikon Situs -->
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23FAFAF8'/%3E%3Cpath d='M20 44V20h13.4c3.8 0 6.8.9 9 2.7 2.2 1.8 3.3 4.2 3.3 7.3 0 3.1-1.1 5.6-3.3 7.4-2.2 1.8-5.2 2.7-9 2.7H28.9V44H20Zm8.9-9.9h4.3c2 0 3.5-.3 4.5-1 1-.7 1.5-1.8 1.5-3.2 0-1.4-.5-2.4-1.5-3.1-1-.7-2.5-1.1-4.5-1.1h-4.3v8.4Z' fill='%230F3D2E'/%3E%3C/svg%3E" />
+
+    <!-- Font: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome (icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        referrerpolicy="no-referrer">
+
+    <!-- CSS Tailwind (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Konfigurasi Tailwind (Tetap) -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F3D2E',   // Hijau Hutan Dalam
+                        canvas: '#FAFAF8',    // Putih Pudar Hangat (diubah dari latar)
+                        charcoal: '#2E2E2E',  // Abu Arang (diubah dari teks)
+                        accent: '#C9A24D',    // Emas Lembut
+                        subtle: '#E5E5E0',    // Garis Batas Terang
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    container: {
+                        center: true,
+                        padding: '1.5rem',
+                        screens: {
+                            sm: '640px',
+                            md: '768px',
+                            lg: '1024px',
+                            xl: '1100px',
+                        },
+                    },
+                    boxShadow: {
+                        'editorial': '0 4px 20px -2px rgba(15, 61, 46, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Gaya Kustom -->
+    <style>
+        /* Warna cadangan jika JS tidak berjalan */
+        :root {
+            --color-primary: #0F3D2E;
+            --color-background: #FAFAF8;
+            --color-text: #2E2E2E;
+            --color-accent: #C9A24D;
+        }
+
+        body {
+            background-color: var(--color-background);
+            color: var(--color-text);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        /* Bilah gulir tipis bernuansa batu tulis (minimal, tanpa gradasi) */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #94a3b8 #f1f5f9;
+        }
+
+        html::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        html::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background-color: #94a3b8;
+            border-radius: 999px;
+            border: 2px solid #f1f5f9;
+        }
+
+        html::-webkit-scrollbar-thumb:hover {
+            background-color: #64748b;
+        }
+
+        /* Bilah Progres Gulir */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background-color: var(--color-primary);
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Perbaikan Gulir Halus Lenis */
+        html.lenis,
+        html.lenis body {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
+        /* Utilitas Tipografi Redaksional */
+        .text-balance {
+            text-wrap: balance;
+        }
+
+        .tracking-editorial {
+            letter-spacing: -0.02em;
+        }
+
+        /* Warna Seleksi */
+        ::selection {
+            background-color: var(--color-primary);
+            color: var(--color-background);
+        }
+
+        /* Wadah Gambar Paralaks */
+        .img-reveal-container {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .img-reveal-img {
+            will-change: transform;
+            transform-origin: center center;
+        }
+
+        .experience-bg {
+            background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.04) 0, rgba(0, 0, 0, 0.02) 50%, rgba(0, 0, 0, 0.04) 100%);
+            background-size: 120px 100%;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        .achievements-bg {
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAlJz48cmVjdCBmaWxsPScjZmZmZmZmJyB3aWR0aD0nNTQwJyBoZWlnaHQ9JzQ1MCcvPjxkZWZzPjxsaW5lYXJHcmFkaWVudCBpZD0nYScgZ3JhZGllbnRVbml0cz0ndXNlclNwYWNlT25Vc2UnIHgxPScwJyB4Mj0nMCcgeTE9JzAnIHkyPScxMDAlJyBncmFkaWVudFRyYW5zZm9ybT0ncm90YXRlKDMyNiw3NjQsMzg5KSc+PHN0b3Agb2Zmc2V0PScwJyBzdG9wLWNvbG9yPScjZmZmZmZmJy8+PHN0b3Agb2Zmc2V0PScxJyBzdG9wLWNvbG9yPScjRTlGRkZDJy8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PC9zdmc+");
+            background-repeat: repeat;
+            background-size: auto;
+            position: relative;
+        }
+
+
+        .marquee {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .marquee__track {
+            display: flex;
+            width: max-content;
+            animation: marquee-x 22s linear infinite;
+            will-change: transform;
+        }
+
+        .marquee__group {
+            flex-shrink: 0;
+            display: inline-flex;
+            align-items: center;
+            gap: 3rem;
+            padding: 1.25rem 1.5rem;
+            white-space: nowrap;
+        }
+
+        .marquee-band {
+            --marquee-border: 6px;
+            background: linear-gradient(to bottom,
+                    var(--color-primary) 0 var(--marquee-border),
+                    var(--color-accent) var(--marquee-border) calc(100% - var(--marquee-border)),
+                    var(--color-primary) calc(100% - var(--marquee-border)) 100%);
+        }
+
+        @media (min-width: 768px) {
+            .marquee-band {
+                --marquee-border: 8px;
+            }
+        }
+
+        /* Background grid (putih + kotak hitam halus) */
+        .bg-grid {
+            background-color: var(--color-background);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48' viewBox='0 0 48 48'%3E%3Cpath d='M48 0H0V48' fill='none' stroke='%23000' stroke-opacity='0.12' stroke-width='1'/%3E%3C/svg%3E");
+            background-size: 48px 48px;
+            background-position: 0 0;
+        }
+
+        .marquee:hover .marquee__track {
+            animation-play-state: paused;
+        }
+
+        @keyframes marquee-x {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .marquee__track {
+                animation: none;
+            }
+        }
+    </style>
+
+    <!-- SEO JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Helmisari Dwi Putri, S.M",
+      "jobTitle": "Profesional Komunikasi Pemasaran",
+      "url": "https://helmisaridwiputri.com",
+      "sameAs": [
+        "https://www.linkedin.com/in/helmisari-dwi-putri", 
+        "https://instagram.com/hlmsaridw1"
+      ],
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Universitas Negeri Jakarta"
+      },
+      "description": "Profesional manajemen pemasaran dengan pengalaman kerja 7 tahun dalam komunikasi pemasaran terintegrasi, CRM, dan peningkatan kesadaran merek."
+    }
+    </script>
+</head>
+
+<body class="antialiased leading-relaxed text-charcoal bg-canvas">
+
+    <!-- Indikator Progres Gulir -->
+    <div id="scroll-progress"></div>
+
+    <!-- Background grid -->
+    <div class="fixed inset-0 z-0 pointer-events-none bg-grid" aria-hidden="true"></div>
+
+    <div class="relative z-10">
+        <!-- Navigasi (gaya pill seperti referensi) -->
+        <nav class="fixed top-4 left-0 w-full z-50" aria-label="Navigasi Utama">
+            <div class="container mx-auto">
+                <div id="navbar"
+                    class="flex items-center justify-between gap-4 px-4 py-3 bg-primary rounded-full border border-black/10 shadow-sm transition-shadow duration-300">
+                    <!-- Brand -->
+                    <a href="#hero" class="flex items-center gap-3 text-canvas font-semibold tracking-tight">
+                        <span
+                            class="w-10 h-10 rounded-full bg-accent text-primary flex items-center justify-center font-bold">
+                            H
+                        </span>
+                        <span class="text-lg">Helmisari<span class="text-accent">.</span></span>
+                    </a>
+
+                    <!-- Menu Layar Besar -->
+                    <div class="hidden md:flex items-center gap-8 text-sm font-medium tracking-wide text-canvas/80">
+                        <a href="#hero"
+                            class="flex items-center gap-2 text-accent hover:text-accent transition-colors duration-300">
+                            <i class="fa-solid fa-house text-[13px]"></i>
+                            <span>Beranda</span>
+                        </a>
+                        <a href="#about"
+                            class="flex items-center gap-2 hover:text-canvas transition-colors duration-300">
+                            <i class="fa-regular fa-user text-[13px]"></i>
+                            <span>Tentang</span>
+                        </a>
+                        <a href="#expertise"
+                            class="flex items-center gap-2 hover:text-canvas transition-colors duration-300">
+                            <i class="fa-solid fa-layer-group text-[13px]"></i>
+                            <span>Keahlian</span>
+                        </a>
+                        <a href="#experience"
+                            class="flex items-center gap-2 hover:text-canvas transition-colors duration-300">
+                            <i class="fa-solid fa-briefcase text-[13px]"></i>
+                            <span>Pengalaman</span>
+                        </a>
+                        <a href="#case-studies"
+                            class="flex items-center gap-2 hover:text-canvas transition-colors duration-300">
+                            <i class="fa-solid fa-diagram-project text-[13px]"></i>
+                            <span>Proyek</span>
+                        </a>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <a href="#contact"
+                            class="hidden sm:inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-canvas text-primary font-semibold text-sm border border-black/10 hover:bg-white transition-colors duration-300">
+                            <i class="fa-regular fa-envelope"></i>
+                            <span>Kontak Saya</span>
+                        </a>
+
+                        <!-- Tombol Menu Ponsel -->
+                        <button id="mobile-menu-btn" class="md:hidden text-canvas focus:outline-none"
+                            aria-label="Buka/Tutup Menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h16M4 18h16" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lapisan Menu Ponsel -->
+            <div id="mobile-menu"
+                class="fixed inset-0 bg-canvas z-40 transform translate-x-full transition-transform duration-300 md:hidden flex flex-col justify-center items-center space-y-8">
+                <a href="#hero" class="text-2xl font-medium mobile-link text-charcoal flex items-center gap-3">
+                    <i class="fa-solid fa-house text-base"></i>
+                    <span>Beranda</span>
+                </a>
+                <a href="#about" class="text-2xl font-medium mobile-link text-charcoal flex items-center gap-3">
+                    <i class="fa-regular fa-user text-base"></i>
+                    <span>Tentang</span>
+                </a>
+                <a href="#expertise" class="text-2xl font-medium mobile-link text-charcoal flex items-center gap-3">
+                    <i class="fa-solid fa-layer-group text-base"></i>
+                    <span>Keahlian</span>
+                </a>
+                <a href="#experience" class="text-2xl font-medium mobile-link text-charcoal flex items-center gap-3">
+                    <i class="fa-solid fa-briefcase text-base"></i>
+                    <span>Pengalaman</span>
+                </a>
+                <a href="#case-studies" class="text-2xl font-medium mobile-link text-charcoal flex items-center gap-3">
+                    <i class="fa-solid fa-diagram-project text-base"></i>
+                    <span>Proyek</span>
+                </a>
+                <a href="#contact" class="text-2xl font-medium mobile-link text-primary flex items-center gap-3">
+                    <i class="fa-regular fa-envelope text-base"></i>
+                    <span>Kontak</span>
+                </a>
+                <button id="close-menu" class="absolute top-6 right-6 text-primary p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- 1. Bagian Utama -->
+        <header id="hero" class="relative min-h-screen flex flex-col pt-24 md:pt-28 pb-0 overflow-hidden bg-canvas">
+            <!-- Dekorasi latar -->
+            <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+                <div class="absolute -top-24 -left-24 w-80 h-80 bg-accent/10 rounded-full blur-3xl"></div>
+                <div class="absolute top-1/3 -right-24 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
+            </div>
+
+            <div
+                class="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-center relative z-10 flex-1 pb-10 md:pb-14">
+                <!-- Teks Utama -->
+                <div class="md:col-span-6 order-2 md:order-1">
+                    <div
+                        class="inline-flex items-center gap-2 mb-6 px-4 py-2 border border-black/10 rounded-full bg-white">
+                        <span class="inline-block w-2 h-2 rounded-full bg-accent"></span>
+                        <span class="text-xs font-semibold uppercase tracking-widest text-primary">Halo, selamat
+                            datang!</span>
+                    </div>
+
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary leading-[1.06] mb-6 tracking-editorial split-text-reveal">
+                        Saya <span
+                            class="text-accent underline decoration-accent/60 decoration-[6px] underline-offset-[10px]">Helmisari
+                            Dwi Putri</span>,<br>
+                        Profesional Komunikasi Pemasaran<br>
+                        <span class="text-charcoal">Berbasis di Indonesia.</span>
+                    </h1>
+
+                    <p class="text-base md:text-lg text-charcoal/65 mb-9 max-w-lg leading-relaxed fade-in-up"
+                        data-delay="0.3">
+                        Menghubungkan merek dengan audiens melalui strategi komunikasi terintegrasi, manajemen CRM, dan
+                        konten yang berdampak selama 7+ tahun.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-4 fade-in-up" data-delay="0.5">
+                        <a href="#case-studies"
+                            class="inline-flex items-center rounded-full bg-primary text-white pl-7 pr-3 py-3.5 font-medium shadow-lg shadow-primary/15 hover:bg-primary/90 transition-all duration-300">
+                            <span>Lihat Portofolio</span>
+                            <span
+                                class="ml-4 w-11 h-11 rounded-full bg-accent text-primary flex items-center justify-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24"
+                                    fill="currentColor" aria-hidden="true">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </span>
+                        </a>
+                        <a href="#contact"
+                            class="inline-flex items-center justify-center px-7 py-3.5 rounded-full border-2 border-charcoal/20 font-medium text-charcoal hover:border-primary hover:text-primary transition-all duration-300 bg-white">
+                            Hubungi Saya
+                        </a>
+                    </div>
+
+                    <!-- Statistik (tetap untuk animasi CountUp) -->
+                    <div class="mt-8 flex flex-wrap gap-3 fade-in-up" data-delay="0.7">
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/10 bg-white shadow-sm">
+                            <span class="text-primary font-bold tabular-nums"><span id="exp-count">0</span>+</span>
+                            <span class="text-xs text-charcoal/70 uppercase tracking-wider">Tahun</span>
+                        </div>
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/10 bg-white shadow-sm">
+                            <span class="text-primary font-bold tabular-nums"><span id="project-count">0</span>+</span>
+                            <span class="text-xs text-charcoal/70 uppercase tracking-wider">Kampanye</span>
+                        </div>
+                        <div
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-black/10 bg-white shadow-sm">
+                            <span class="text-primary font-bold">S.M</span>
+                            <span class="text-xs text-charcoal/70 uppercase tracking-wider">Manajemen</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Utama -->
+                <div class="md:col-span-6 order-1 md:order-2">
+                    <div class="relative w-full max-w-[560px] mx-auto md:ml-auto">
+                        <!-- Lingkaran aksen belakang -->
+                        <div class="absolute left-6 md:left-12 top-20 w-72 h-72 md:w-[420px] md:h-[420px] bg-accent rounded-full"
+                            aria-hidden="true"></div>
+
+                        <!-- Badge bulat seperti referensi -->
+                        <div class="absolute right-4 md:right-6 top-6 md:top-10 w-16 h-16 rounded-full bg-primary text-canvas flex items-center justify-center shadow-editorial border-4 border-canvas"
+                            aria-hidden="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm1 5v4.2l3.1 1.8-.8 1.4L11 12V7h2z" />
+                            </svg>
+                        </div>
+
+                        <div
+                            class="relative z-10 overflow-hidden rounded-[28px] bg-white shadow-editorial img-reveal-container border border-black/5">
+                            <div class="aspect-[4/5]">
+                                <img src="User.jpeg" alt="Potret profesional Helmisari Dwi Putri"
+                                    class="w-full h-[115%] object-cover object-[center_20%] parallax-img"
+                                    loading="eager">
+                            </div>
+                        </div>
+
+                        <!-- Label mengambang -->
+                        <div
+                            class="absolute right-4 md:right-6 bottom-24 bg-accent text-primary rounded-full px-5 py-2 text-xs font-semibold shadow-editorial border border-black/10">
+                            Strategi Kampanye
+                        </div>
+                        <div
+                            class="absolute left-4 md:left-6 bottom-8 bg-primary text-canvas rounded-full px-5 py-2 text-xs font-semibold shadow-editorial border border-white/10">
+                            Komunikasi Merek
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strip kategori (seperti referensi) -->
+            <div class="w-full marquee-band">
+                <div class="marquee text-primary">
+                    <div class="marquee__track" aria-label="Kategori keahlian (berjalan horizontal)">
+                        <div class="marquee__group">
+                            <span class="font-semibold tracking-wide">Strategi Merek</span>
+                            <span class="opacity-70">*</span>
+                            <span class="font-semibold tracking-wide">CRM & Keterlibatan</span>
+                            <span class="opacity-70">*</span>
+                            <span class="font-semibold tracking-wide">Konten & Copywriting</span>
+                            <span class="opacity-70">*</span>
+                            <span class="font-semibold tracking-wide">Kampanye Terintegrasi</span>
+                            <span class="opacity-70">*</span>
+                        </div>
+                        <div class="marquee__group" aria-hidden="true">
+                            <span class="font-semibold tracking-wide">Strategi Merek</span>
+                            <span class="opacity-70">*</span>
+                            <span class="font-semibold tracking-wide">CRM & Keterlibatan</span>
+                            <span class="opacity-70">*</span>
+                            <span class="font-semibold tracking-wide">Konten & Copywriting</span>
+                            <span class="opacity-70">*</span>
+                            <span class="font-semibold tracking-wide">Kampanye Terintegrasi</span>
+                            <span class="opacity-70">*</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- 2. Bagian Tentang -->
+        <section id="about" class="py-16 md:py-20 relative bg-transparent overflow-hidden">
+            <!-- Accent tipografi (tanpa foto) -->
+            <div class="absolute bottom-28 md:bottom-24 right-4 md:right-10 text-primary/40 md:text-primary/5 font-bold tracking-tight leading-none select-none pointer-events-none"
+                aria-hidden="true">
+                <div class="text-[76px] md:text-[120px]">7+</div>
+                <div class="-mt-5 md:-mt-8 text-[30px] md:text-[48px]">Tahun</div>
+            </div>
+
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+                    <!-- Kolom kiri: anchor editorial -->
+                    <div class="md:col-span-4 reveal-scroll">
+                        <p class="text-sm font-bold tracking-[0.2em] text-accent uppercase">Tentang Saya</p>
+                        <div class="mt-5 h-px w-16 bg-accent"></div>
+                        <h2 class="mt-6 text-3xl md:text-4xl font-bold text-primary leading-tight tracking-editorial">
+                            Berorientasi Hasil,<br>
+                            Ditentukan oleh Strategi.
+                        </h2>
+                    </div>
+
+                    <!-- Kolom kanan: 3 layer konten -->
+                    <div class="md:col-span-8">
+                        <!-- Layer 1: Editorial Intro -->
+                        <div class="reveal-scroll">
+                            <p class="text-base md:text-lg text-charcoal/80 leading-relaxed max-w-2xl">
+                                Helmisari Dwi Putri adalah profesional Komunikasi Pemasaran (Marcom) dengan latar
+                                <strong>Sarjana Manajemen (UNJ, 2021)</strong> dan pengalaman 7+ tahun dalam komunikasi
+                                merek, CRM, serta kampanye lintas kanal.
+                            </p>
+                            <p class="mt-4 text-base md:text-lg text-charcoal/75 leading-relaxed max-w-2xl">
+                                Fokus utama saya adalah menerjemahkan tujuan bisnis menjadi narasi kampanye, struktur
+                                pesan, dan rencana kanal yang konsisten—dengan eksekusi yang terukur serta koordinasi
+                                lintas fungsi agar dampaknya terlihat.
+                            </p>
+                        </div>
+
+                        <!-- Layer 2: Sorotan Strategis -->
+                        <div class="mt-8 pt-8 border-t border-black/10 reveal-scroll">
+                            <p class="text-xs font-bold tracking-[0.22em] text-charcoal/60 uppercase">
+                                Sorotan Strategis
+                            </p>
+                            <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
+                                <div class="bg-white border border-black/10 rounded-lg p-4">
+                                    <p class="font-semibold text-primary tracking-tight">Komunikasi Terintegrasi</p>
+                                    <p class="mt-2 text-[13px] text-charcoal/70 leading-relaxed">
+                                        Menyusun ritme pesan dan kanal dari kesadaran hingga konversi secara rapi dan
+                                        konsisten.
+                                    </p>
+                                </div>
+                                <div class="bg-white border border-black/10 rounded-lg p-4">
+                                    <p class="font-semibold text-primary tracking-tight">Narasi Kampanye & Merek</p>
+                                    <p class="mt-2 text-[13px] text-charcoal/70 leading-relaxed">
+                                        Membangun narasi kampanye yang relevan, mudah diaktifkan tim, dan selaras dengan
+                                        posisi merek.
+                                    </p>
+                                </div>
+                                <div class="bg-white border border-black/10 rounded-lg p-4">
+                                    <p class="font-semibold text-primary tracking-tight">Berbasis Data & Wawasan</p>
+                                    <p class="mt-2 text-[13px] text-charcoal/70 leading-relaxed">
+                                        Menggunakan data audiens/CRM untuk prioritas pesan, segmentasi, dan optimasi
+                                        performa.
+                                    </p>
+                                </div>
+                                <div class="bg-white border border-black/10 rounded-lg p-4">
+                                    <p class="font-semibold text-primary tracking-tight">Kolaborasi Lintas Fungsi</p>
+                                    <p class="mt-2 text-[13px] text-charcoal/70 leading-relaxed">
+                                        Menyatukan pemangku kepentingan agar keputusan cepat, eksekusi rapi, dan pesan
+                                        tetap satu suara.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Layer 3: Pernyataan Profesional (terintegrasi) -->
+                        <div class="mt-8 pt-8 border-t border-black/10 reveal-scroll">
+                            <p class="text-xs font-bold tracking-[0.22em] text-charcoal/60 uppercase mb-2">
+                                Pernyataan Profesional
+                            </p>
+                            <div class="border-l-2 border-accent pl-4">
+                                <p class="text-primary font-medium italic leading-relaxed">
+                                    “Saya mengelola komunikasi pemasaran secara strategis—menggabungkan narasi, data,
+                                    dan kolaborasi—untuk membangun kepercayaan, memperkuat reputasi, dan mendorong hasil
+                                    yang dapat dipertanggungjawabkan.”
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Keahlian Inti -->
+        <section id="expertise" class="py-24 bg-white border-y border-black/5">
+            <div class="container mx-auto">
+                <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                    <h2 class="text-sm font-bold tracking-[0.2em] text-accent uppercase mb-3">Kompetensi Inti</h2>
+                    <h3 class="text-3xl font-bold text-primary">Area Fokus Strategis</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Kartu 1 -->
+                    <div class="group p-8 bg-canvas rounded-lg border border-black/5 hover:border-accent/30 transition-all duration-300 hover:shadow-editorial"
+                        data-aos="fade-up" data-aos-delay="0">
+                        <div
+                            class="w-12 h-12 bg-primary/5 rounded-md flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">Komunikasi Merek</h4>
+                        <p class="text-charcoal/70 text-sm leading-relaxed">
+                            Merancang narasi merek yang konsisten untuk meningkatkan reputasi positif. Fokus pada
+                            eksposur merek mitra dan kepercayaan publik.
+                        </p>
+                    </div>
+
+                    <!-- Kartu 2 -->
+                    <div class="group p-8 bg-canvas rounded-lg border border-black/5 hover:border-accent/30 transition-all duration-300 hover:shadow-editorial"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div
+                            class="w-12 h-12 bg-primary/5 rounded-md flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">CRM & Keterlibatan Pelanggan</h4>
+                        <p class="text-charcoal/70 text-sm leading-relaxed">
+                            Manajemen hubungan pelanggan (donatur/klien) yang responsif, penanganan keluhan, dan
+                            strategi retensi untuk loyalitas jangka panjang.
+                        </p>
+                    </div>
+
+                    <!-- Kartu 3 -->
+                    <div class="group p-8 bg-canvas rounded-lg border border-black/5 hover:border-accent/30 transition-all duration-300 hover:shadow-editorial"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div
+                            class="w-12 h-12 bg-primary/5 rounded-md flex items-center justify-center text-primary mb-6 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122" />
+                            </svg>
+                        </div>
+                        <h4 class="text-xl font-bold text-primary mb-3">Kampanye Terintegrasi</h4>
+                        <p class="text-charcoal/70 text-sm leading-relaxed">
+                            Eksekusi acara luring/daring (seperti Hari Bebas Kendaraan, seminar daring), penggalangan
+                            dana daring, dan pengelolaan perdagangan daring (Tokopedia/Shopee).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Bagian Keterampilan -->
+        <section id="skills" class="py-24 bg-primary text-canvas relative overflow-hidden">
+            <!-- Pola Latar -->
+            <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" stroke-width="1" />
+                        </pattern>
+                    </defs>
+                    <rect width="100%" height="100%" fill="url(#grid)" />
+                </svg>
+            </div>
+
+            <div class="container mx-auto relative z-10">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+
+                    <!-- Keterampilan Teknis -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                            <span class="w-8 h-[1px] bg-accent mr-4"></span> Keterampilan Teknis
+                        </h3>
+                        <div class="space-y-6">
+                            <div class="group">
+                                <div class="flex justify-between mb-2 text-sm font-medium text-white/90">
+                                    <span>Penulisan Naskah & Rilis Pers</span>
+                                    <span>Mahir</span>
+                                </div>
+                                <div class="w-full bg-white/10 rounded-full h-1">
+                                    <div
+                                        class="bg-accent h-1 rounded-full w-[90%] transition-all duration-1000 group-hover:shadow-[0_0_10px_rgba(201,162,77,0.5)]">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between mb-2 text-sm font-medium text-white/90">
+                                    <span>Penggalangan Dana Daring & Pasar Daring</span>
+                                    <span>Ahli</span>
+                                </div>
+                                <div class="w-full bg-white/10 rounded-full h-1">
+                                    <div class="bg-accent h-1 rounded-full w-[85%]"></div>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between mb-2 text-sm font-medium text-white/90">
+                                    <span>Desain Canva & Fotografi</span>
+                                    <span>Terampil</span>
+                                </div>
+                                <div class="w-full bg-white/10 rounded-full h-1">
+                                    <div class="bg-accent h-1 rounded-full w-[80%]"></div>
+                                </div>
+                            </div>
+                            <div class="group">
+                                <div class="flex justify-between mb-2 text-sm font-medium text-white/90">
+                                    <span>Microsoft Office (Word, Excel, PPT)</span>
+                                    <span>Ahli</span>
+                                </div>
+                                <div class="w-full bg-white/10 rounded-full h-1">
+                                    <div class="bg-accent h-1 rounded-full w-[95%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Keterampilan Nonteknis & Alat -->
+                    <div>
+                        <h3 class="text-2xl font-bold text-white mb-8 flex items-center">
+                            <span class="w-8 h-[1px] bg-accent mr-4"></span> Keterampilan Nonteknis
+                        </h3>
+                        <div class="flex flex-wrap gap-3">
+                            <span
+                                class="px-4 py-2 bg-white/5 border border-white/10 rounded-md text-sm text-white hover:bg-white/10 transition-colors cursor-default">Komunikasi</span>
+                            <span
+                                class="px-4 py-2 bg-white/5 border border-white/10 rounded-md text-sm text-white hover:bg-white/10 transition-colors cursor-default">Kerja
+                                Tim</span>
+                            <span
+                                class="px-4 py-2 bg-white/5 border border-white/10 rounded-md text-sm text-white hover:bg-white/10 transition-colors cursor-default">Manajemen
+                                Waktu</span>
+                            <span
+                                class="px-4 py-2 bg-white/5 border border-white/10 rounded-md text-sm text-white hover:bg-white/10 transition-colors cursor-default">Berpikir
+                                Analitis</span>
+                            <span
+                                class="px-4 py-2 bg-white/5 border border-white/10 rounded-md text-sm text-white hover:bg-white/10 transition-colors cursor-default">Kemampuan
+                                Beradaptasi</span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-white mt-10 mb-8 flex items-center">
+                            <span class="w-8 h-[1px] bg-accent mr-4"></span> Sertifikasi
+                        </h3>
+                        <ul class="text-white/70 text-sm space-y-3 list-disc pl-5">
+                            <li>Pemenang Dana Kewirausahaan UNJ (PMW UNJ) - 2019</li>
+                            <li>Juara 5 LKTI Ekonomi Islam The Seleb ke-11 UNJ - 2018</li>
+                            <li>Delegasi Konferensi Ekonomi Islam Se-Jabodetabek - 2018</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Linimasa Pengalaman -->
+        <section id="experience" class="py-24 bg-canvas relative"
+            style="background-image:url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnICB3aWR0aD0nMTI0JyBoZWlnaHQ9JzEyNCcgdmlld0JveD0nMCAwIDEwMCAxMDAnPjxyZWN0IGZpbGw9JyNmZmZmZmYnIHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJy8+PGcgIHN0cm9rZT0nI0NDQycgc3Ryb2tlLXdpZHRoPSczLjcnIHN0cm9rZS1vcGFjaXR5PScwJz48cmVjdCAgZmlsbD0nI0Y1RjVGNScgeD0nLTYwJyB5PSctNjAnIHdpZHRoPSc5OScgaGVpZ2h0PScyNDAnLz48L2c+PC9zdmc+'); background-repeat: repeat;">
+            <div class="experience-bg absolute inset-0 z-0"></div>
+            <div class="container mx-auto">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="text-sm font-bold tracking-[0.2em] text-accent uppercase mb-3">Jalur Karier</h2>
+                    <h3 class="text-3xl font-bold text-primary mb-2">Linimasa Profesional</h3>
+                <div class="w-full flex justify-center">
+                    <a href="https://drive.google.com/drive/folders/1Iu4OXBBZD_UGVxqg6vbGg26jguJOOaR7" target="_blank" rel="noopener noreferrer"
+                        class="text-sm font-semibold text-primary/70 hover:text-accent transition-colors whitespace-nowrap inline-flex items-center gap-1">
+                        Pengalaman Organisasi
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M5.293 9.293a1 1 0 011.414 0L9 11.586V4a1 1 0 112 0v7.586l2.293-2.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+                <div class="relative max-w-4xl mx-auto">
+                    <!-- Garis Vertikal -->
+                    <div class="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 h-full w-[1px] bg-primary/20">
+                    </div>
+
+                    <!-- Entri 1 -->
+                    <div class="relative mb-12 md:mb-0 md:h-48 group">
+                        <div class="md:w-1/2 md:pr-12 md:text-right pl-8 md:pl-0">
+                            <span class="text-accent text-sm font-bold tracking-wider mb-1 block">Apr 2024 - Saat
+                                ini</span>
+                            <h4 class="text-xl font-bold text-primary">Manajemen Hubungan Pelanggan (CRM)</h4>
+                            <p class="text-charcoal/70 text-sm mt-2">Yayasan Djalaludin Pane (DPF)</p>
+                            <p
+                                class="text-charcoal/60 text-xs mt-2 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Menangani layanan ZISWAF, keluhan pelanggan, serta akurasi data donasi.
+                            </p>
+                        </div>
+                        <!-- Titik -->
+                        <div
+                            class="absolute left-[-5px] md:left-1/2 transform md:-translate-x-1/2 w-3 h-3 bg-white border-2 border-accent rounded-full z-10 top-1">
+                        </div>
+                    </div>
+
+                    <!-- Entri 2 -->
+                    <div class="relative mb-12 md:mb-0 md:h-48 group">
+                        <div class="md:w-1/2 md:ml-auto md:pl-12 pl-8">
+                            <span class="text-accent text-sm font-bold tracking-wider mb-1 block">Jan - Jun 2024</span>
+                            <h4 class="text-xl font-bold text-primary">Anggota KPPS</h4>
+                            <p class="text-charcoal/70 text-sm mt-2">Pemilu Presiden 2024</p>
+                        </div>
+                        <!-- Titik -->
+                        <div
+                            class="absolute left-[-5px] md:left-1/2 transform md:-translate-x-1/2 w-3 h-3 bg-white border-2 border-primary rounded-full z-10 top-1">
+                        </div>
+                    </div>
+
+                    <!-- Entri 3 -->
+                    <div class="relative mb-12 md:mb-0 md:h-48 group">
+                        <div class="md:w-1/2 md:pr-12 md:text-right pl-8 md:pl-0">
+                            <span class="text-accent text-sm font-bold tracking-wider mb-1 block">Des 2023 - Mar
+                                2024</span>
+                            <h4 class="text-xl font-bold text-primary">Layanan Pelanggan</h4>
+                            <p class="text-charcoal/70 text-sm mt-2">PT. Ganesha Operation</p>
+                            <p
+                                class="text-charcoal/60 text-xs mt-2 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Memberikan informasi program pembelajaran, jadwal, dan menangani pendaftaran.
+                            </p>
+                        </div>
+                        <!-- Titik -->
+                        <div
+                            class="absolute left-[-5px] md:left-1/2 transform md:-translate-x-1/2 w-3 h-3 bg-white border-2 border-primary rounded-full z-10 top-1">
+                        </div>
+                    </div>
+
+                    <!-- Entri 4 -->
+                    <div class="relative mb-12 md:mb-0 md:h-48 group">
+                        <div class="md:w-1/2 md:ml-auto md:pl-12 pl-8">
+                            <span class="text-accent text-sm font-bold tracking-wider mb-1 block">Mar 2021 - Jun
+                                2023</span>
+                            <h4 class="text-xl font-bold text-primary">Komunikasi Pemasaran</h4>
+                            <p class="text-charcoal/70 text-sm mt-2">BAZNAS RI</p>
+                            <p
+                                class="text-charcoal/60 text-xs mt-2 hidden md:block opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                Merencanakan dan menjalankan acara (HUT BAZNAS, Hari Bebas Kendaraan), koordinasi media,
+                                serta dukungan publikasi.
+                            </p>
+                        </div>
+                        <!-- Titik -->
+                        <div
+                            class="absolute left-[-5px] md:left-1/2 transform md:-translate-x-1/2 w-3 h-3 bg-white border-2 border-primary rounded-full z-10 top-1">
+                        </div>
+                    </div>
+
+                    <!-- Entri 5 -->
+                    <div class="relative group">
+                        <div class="md:w-1/2 md:pr-12 md:text-right pl-8 md:pl-0">
+                            <span class="text-accent text-sm font-bold tracking-wider mb-1 block">Apr - Jun 2020</span>
+                            <h4 class="text-xl font-bold text-primary">Penggalangan Dana Daring</h4>
+                            <p class="text-charcoal/70 text-sm mt-2">BAZNAS RI</p>
+                        </div>
+                        <!-- Titik -->
+                        <div
+                            class="absolute left-[-5px] md:left-1/2 transform md:-translate-x-1/2 w-3 h-3 bg-white border-2 border-primary rounded-full z-10 top-1">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Studi Kasus Unggulan -->
+        <section id="case-studies" class="py-24 bg-white">
+            <div class="container mx-auto">
+                <div class="flex flex-col md:flex-row justify-between items-end mb-16 px-4 md:px-0 gap-6">
+                    <div data-aos="fade-right">
+                        <h2 class="text-sm font-bold tracking-[0.2em] text-accent uppercase mb-3">Karya Terpilih</h2>
+                        <h3 class="text-3xl font-bold text-primary">Proyek & Kampanye Utama</h3>
+                    </div>
+                    <a href="Projects.html" class="self-start inline-flex items-center gap-2 text-primary/80 text-sm font-semibold hover:text-accent transition-colors">
+                        Lihat Semua Project
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Grid Proyek -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Proyek 1: Acara BAZNAS -->
+                    <div class="group cursor-pointer" data-project-card role="button" tabindex="0"
+                        aria-label="Buka pratinjau foto proyek: HUT Ke-22 & Hari Bebas Kendaraan BAZNAS RI"
+                        data-aos="fade-up" data-aos-delay="0">
+                        <div class="overflow-hidden rounded-lg mb-4 aspect-[4/3] bg-gray-100 relative">
+                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/0 transition-colors z-10">
+                            </div>
+                            <img src="HUT22.jpeg" alt="Manajemen Acara BAZNAS"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                                loading="lazy">
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">Manajemen Acara</span>
+                            <h4 class="text-xl font-bold text-primary group-hover:text-accent transition-colors">HUT
+                                Ke-22 & Hari Bebas Kendaraan BAZNAS RI</h4>
+                            <p class="text-charcoal/70 text-sm line-clamp-3">
+                                Merencanakan, mengoordinasikan, dan melaksanakan kegiatan acara sebagai sarana
+                                komunikasi. Menyusun RAB, koordinasi teknis internal/eksternal, hingga memastikan
+                                kelancaran hari-H.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Proyek 2: Buletin DPF -->
+                    <div class="group cursor-pointer" data-project-card role="button" tabindex="0"
+                        aria-label="Buka pratinjau foto proyek: Buletin Mata Air Kebajikan" data-aos="fade-up"
+                        data-aos-delay="100">
+                        <div class="overflow-hidden rounded-lg mb-4 aspect-[4/3] bg-gray-100 relative">
+                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/0 transition-colors z-10">
+                            </div>
+                            <img src="Baznas.jpeg" alt="Buletin DPF"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                                loading="lazy">
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">Strategi Konten</span>
+                            <h4 class="text-xl font-bold text-primary group-hover:text-accent transition-colors">Buletin
+                                Mata Air Kebajikan</h4>
+                            <p class="text-charcoal/70 text-sm line-clamp-3">
+                                Pengelolaan publikasi buletin DPF (Edisi November & Desember 2024). Menulis konten yang
+                                meningkatkan keterlibatan, reputasi positif, dan transparansi program kepada donatur.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Proyek 3: Optimalisasi Pasar Daring -->
+                    <div class="group cursor-pointer" data-project-card role="button" tabindex="0"
+                        aria-label="Buka pratinjau foto proyek: Pengelolaan Tokopedia & Shopee" data-aos="fade-up"
+                        data-aos-delay="200">
+                        <div class="overflow-hidden rounded-lg mb-4 aspect-[4/3] bg-gray-100 relative">
+                            <div class="absolute inset-0 bg-primary/10 group-hover:bg-primary/0 transition-colors z-10">
+                            </div>
+                            <img src="CarFreeDay.jpeg" alt="Pengelolaan Pasar Daring"
+                                class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out"
+                                loading="lazy">
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-xs font-bold text-accent uppercase tracking-wider">Perdagangan
+                                Daring</span>
+                            <h4 class="text-xl font-bold text-primary group-hover:text-accent transition-colors">
+                                Pengelolaan Tokopedia & Shopee</h4>
+                            <p class="text-charcoal/70 text-sm line-clamp-3">
+                                Mengelola toko daring "Yayasan Djalaludin Pane" (Peringkat 5.0). Optimalisasi penjualan
+                                produk Qurban, Kurma, dan cendera mata Palestina dengan respons pesan cepat dan tata
+                                letak toko profesional.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Pencapaian -->
+        <section id="achievements" class="py-0 bg-canvas border-t border-black/5 relative">
+            <div class="achievements-bg absolute inset-0 pointer-events-none" aria-hidden="true"></div>
+            <div class="container mx-auto py-24">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <h2 class="text-sm font-bold tracking-[0.2em] text-accent uppercase mb-3">Apresiasi</h2>
+                        <h3 class="text-3xl font-bold text-primary mb-6">Penghargaan & Prestasi</h3>
+                        <p class="text-charcoal/70 leading-relaxed mb-8">
+                            Konsistensi dalam memberikan kinerja terbaik telah diakui melalui berbagai kompetisi tingkat
+                            universitas dan regional, khususnya dalam bidang ekonomi, kewirausahaan, dan penulisan.
+                        </p>
+                        <div class="flex flex-wrap gap-6 text-sm font-semibold tracking-tight">
+                            <a href="https://drive.google.com/file/d/1x6AKo5DhJ3bol8OZ1AycjzCyGpjDRULd/view" target="_blank" download
+                                class="text-primary relative pb-1 before:absolute before:left-0 before:bottom-0 before:h-[2px] before:w-full before:bg-accent hover:text-accent transition-colors">
+                                Unduh CV Lengkap
+                            </a>
+                            <a href="https://drive.google.com/drive/folders/16drc_AN8zkAKd9Lqwq2dkCxtAZjLiTw7" target="_blank" rel="noopener noreferrer"
+                                class="text-primary relative pb-1 before:absolute before:left-0 before:bottom-0 before:h-[2px] before:w-full before:bg-accent hover:text-accent transition-colors">
+                                Lihat Sertifikat
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4" data-aos="fade-left">
+                        <div
+                            class="flex items-start p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <span class="text-accent font-bold text-lg mr-4 mt-1">01</span>
+                            <div>
+                                <h4 class="font-bold text-primary">Juara 1 Lomba Cerpen</h4>
+                                <p class="text-xs text-charcoal/60">Peluncuran Kompetisi Keisya 24 (UIN Jakarta, 2020)
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-start p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <span class="text-accent font-bold text-lg mr-4 mt-1">02</span>
+                            <div>
+                                <h4 class="font-bold text-primary">Pemenang Dana Kewirausahaan</h4>
+                                <p class="text-xs text-charcoal/60">PMW UNJ (2019)</p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-start p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow">
+                            <span class="text-accent font-bold text-lg mr-4 mt-1">03</span>
+                            <div>
+                                <h4 class="font-bold text-primary">Juara 3 Lomba Menulis Surat</h4>
+                                <p class="text-xs text-charcoal/60">Formmad Muslim Indonesia SV UNDIP (2020)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Kontak -->
+        <section id="contact" class="py-0 bg-primary text-white relative overflow-hidden">
+            <div class="w-full marquee-band">
+                <div class="marquee text-primary">
+                    <div class="marquee__track" aria-label="Kontak dan kolaborasi (berjalan horizontal)">
+                        <div class="marquee__group">
+                            <span class="font-semibold tracking-wide">Hubungi Saya</span>
+                            <span class="opacity-70">*</span>
+                            <span class="font-semibold tracking-wide">Kolaborasi</span>
+                            <span class="opacity-70">*</span>
+                            <span class="font-semibold tracking-wide">Konsultasi Strategi</span>
+                            <span class="opacity-70">*</span>
+                            <span class="font-semibold tracking-wide">Proyek Marcom</span>
+                            <span class="opacity-70">*</span>
+                        </div>
+                        <div class="marquee__group" aria-hidden="true">
+                            <span class="font-semibold tracking-wide">Hubungi Saya</span>
+                            <span class="opacity-70">*</span>
+                            <span class="font-semibold tracking-wide">Kolaborasi</span>
+                            <span class="opacity-70">*</span>
+                            <span class="font-semibold tracking-wide">Konsultasi Strategi</span>
+                            <span class="opacity-70">*</span>
+                            <span class="font-semibold tracking-wide">Proyek Marcom</span>
+                            <span class="opacity-70">*</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mx-auto text-center relative z-10 px-4 py-32">
+                <h2 class="text-sm font-bold tracking-[0.3em] text-accent uppercase mb-4">Hubungi Saya</h2>
+                <h3 class="text-4xl md:text-6xl font-bold mb-8 tracking-tight">Siap meningkatkan komunikasi <br>merek
+                    Anda?</h3>
+                <p class="text-white/70 max-w-xl mx-auto mb-12 text-lg font-light">
+                    Terbuka untuk kesempatan profesional, kolaborasi proyek, atau konsultasi strategi pemasaran. Silakan
+                    hubungi saya secara langsung.
+                </p>
+
+                <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/6287770782077" target="_blank" rel="noopener noreferrer"
+                        class="group relative inline-flex items-center justify-center px-8 py-4 bg-accent text-primary font-bold rounded-md overflow-hidden transition-all hover:bg-white hover:text-primary min-w-[200px]">
+                        <span class="relative z-10 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="currentColor"
+                                viewBox="0 0 24 24">
+                                <path
+                                    d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
+                            </svg>
+                            WhatsApp
+                        </span>
+                    </a>
+
+                    <!-- Surel -->
+                    <a href="mailto:helmisaridwiputri@gmail.com"
+                        class="group relative inline-flex items-center justify-center px-8 py-4 border border-white/20 text-white rounded-md overflow-hidden transition-all hover:bg-white/10 min-w-[200px]">
+                        <span class="relative z-10 flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            Kirim Surel
+                        </span>
+                    </a>
+                </div>
+
+                <!-- Bagian Sosial -->
+                <div class="mt-16 pt-8 border-t border-white/10 flex justify-center space-x-8 text-white/60">
+                    <a href="https://instagram.com/hlmsaridw1" target="_blank" rel="noopener noreferrer"
+                        class="group flex items-center gap-2 hover:text-accent transition-colors" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram text-lg"></i>
+                        <span class="text-sm">Instagram</span>
+                    </a>
+                    <a href="https://tiktok.com/@hmsarr" target="_blank" rel="noopener noreferrer"
+                        class="group flex items-center gap-2 hover:text-accent transition-colors" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok text-lg"></i>
+                        <span class="text-sm">TikTok</span>
+                    </a>
+                    <a href="mailto:helmisaridwiputri@gmail.com"
+                        class="group flex items-center gap-2 hover:text-accent transition-colors" aria-label="Surel">
+                        <i class="fa-regular fa-envelope text-lg"></i>
+                        <span class="text-sm">Email</span>
+                    </a>
+                </div>
+
+                <p class="mt-8 text-xs text-white/30">
+                    &copy; 2024 Helmisari Dwi Putri. Seluruh hak cipta dilindungi. <br>Konsep Desain: Redaksional
+                    Korporat Premium Cerah.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skrip -->
+        <!-- GSAP & Plugin -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+        <!-- Gulir Halus Lenis -->
+        <script src="https://unpkg.com/@studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+
+        <!-- AOS -->
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+        <!-- CountUp.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/countup.js/2.0.7/countUp.umd.js"></script>
+
+        <script>
+            // 1. Inisialisasi Gulir Halus Lenis
+            const lenis = window.Lenis
+                ? new window.Lenis({
+                    duration: 1.2,
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                    direction: "vertical",
+                    gestureDirection: "vertical",
+                    smooth: true,
+                    mouseMultiplier: 1,
+                    smoothTouch: false,
+                    touchMultiplier: 2,
+                })
+                : {
+                    raf: () => { },
+                    start: () => { },
+                    stop: () => { },
+                };
+
+            function raf(time) {
+                lenis.raf(time);
+                if (window.ScrollTrigger) ScrollTrigger.update();
+                requestAnimationFrame(raf);
+            }
+            requestAnimationFrame(raf);
+
+            // Integrasikan Lenis dengan GSAP ScrollTrigger
+            gsap.registerPlugin(ScrollTrigger);
+            if (lenis && typeof lenis.on === "function") {
+                lenis.on("scroll", ScrollTrigger.update);
+            }
+            ScrollTrigger.refresh();
+
+            // 2. Logika Navigasi (Tetap & Ponsel)
+            const navbar = document.getElementById('navbar');
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const closeMenuBtn = document.getElementById('close-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('shadow-lg');
+                } else {
+                    navbar.classList.remove('shadow-lg');
+                }
+
+                // Progres Gulir
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById("scroll-progress").style.width = scrolled + "%";
+            });
+
+            mobileBtn.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+                lenis.stop(); // Hentikan gulir saat menu terbuka
+            });
+
+            const closeMenu = () => {
+                mobileMenu.classList.add('translate-x-full');
+                lenis.start();
+            };
+
+            closeMenuBtn.addEventListener('click', closeMenu);
+            mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+            // 3. Animasi GSAP
+
+            // Munculnya Teks Utama
+            const splitText = document.querySelectorAll('.split-text-reveal');
+            gsap.from(splitText, {
+                y: 100,
+                opacity: 0,
+                duration: 1.5,
+                ease: "power4.out",
+                stagger: 0.1
+            });
+
+            // Elemen Muncul dari Bawah
+            gsap.utils.toArray('.fade-in-up').forEach(element => {
+                gsap.from(element, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 1,
+                    delay: element.dataset.delay || 0,
+                    ease: "power3.out"
+                });
+            });
+
+            // Reveal halus saat masuk viewport (editorial)
+            gsap.utils.toArray('.reveal-scroll').forEach(element => {
+                gsap.from(element, {
+                    y: 18,
+                    opacity: 0,
+                    duration: 0.9,
+                    ease: "power2.out",
+                    scrollTrigger: {
+                        trigger: element,
+                        start: "top 88%",
+                        toggleActions: "play none none none"
+                    }
+                });
+            });
+
+            // Paralaks Redaksional (gambar bergerak lebih lambat dari gulir)
+            gsap.utils.toArray('.img-reveal-container').forEach(container => {
+                const img = container.querySelector('.parallax-img');
+                gsap.to(img, {
+                    yPercent: 15, // Gerakan halus
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: container,
+                        start: "top bottom", // Mulai saat bagian atas wadah menyentuh bawah area tampilan
+                        end: "bottom top", // Berakhir saat bagian bawah wadah menyentuh atas area tampilan
+                        scrub: true
+                    }
+                });
+            });
+
+            gsap.to('.experience-bg', {
+                yPercent: 20,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#experience",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+
+            gsap.to('.achievements-bg', {
+                yPercent: 12,
+                ease: "none",
+                scrollTrigger: {
+                    trigger: "#achievements",
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: true
+                }
+            });
+
+            // 4. Inisialisasi AOS (untuk pudar sederhana)
+            AOS.init({
+                duration: 1000,
+                once: true,
+                offset: 100,
+                easing: 'ease-out-cubic'
+            });
+
+            // 5. Logika CountUp.js
+            const countUpOptions = {
+                duration: 3,
+                useEasing: true,
+                useGrouping: true,
+            };
+
+            // Jalankan hitung naik saat statistik masuk area tampilan
+            ScrollTrigger.create({
+                trigger: "#hero",
+                start: "top center",
+                onEnter: () => {
+                    const expCount = new countUp.CountUp('exp-count', 7, countUpOptions);
+                    const projCount = new countUp.CountUp('project-count', 20, countUpOptions); // Perkiraan
+                    if (!expCount.error) expCount.start();
+                    if (!projCount.error) projCount.start();
+                }
+            });
+
+            // 6. Modal pratinjau proyek (klik kartu -> popup foto)
+            const initProjectModal = () => {
+                const projectModal = document.getElementById('project-modal');
+                const projectModalBackdrop = document.getElementById('project-modal-backdrop');
+                const projectModalClose = document.getElementById('project-modal-close');
+                const projectModalPanel = document.getElementById('project-modal-panel');
+                const projectModalImg = document.getElementById('project-modal-img');
+
+                if (!projectModal || !projectModalBackdrop || !projectModalClose || !projectModalPanel || !projectModalImg) return;
+
+                let lastFocusedElement = null;
+
+                const openProjectModal = (src, alt) => {
+                    lastFocusedElement = document.activeElement;
+                    projectModalImg.src = src;
+                    projectModalImg.alt = alt || 'Pratinjau foto proyek';
+
+                    projectModal.classList.remove('hidden');
+                    projectModal.setAttribute('aria-hidden', 'false');
+                    document.body.style.overflow = 'hidden';
+                    if (lenis && typeof lenis.stop === 'function') lenis.stop();
+
+                    gsap.killTweensOf([projectModalBackdrop, projectModalPanel]);
+                    gsap.set(projectModalBackdrop, { opacity: 0 });
+                    gsap.set(projectModalPanel, { opacity: 0, scale: 0.92, y: 12 });
+
+                    gsap.timeline()
+                        .to(projectModalBackdrop, { opacity: 1, duration: 0.25, ease: "power2.out" }, 0)
+                        .to(projectModalPanel, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "power3.out" }, 0);
+
+                    projectModalClose.focus();
+                };
+
+                const closeProjectModal = () => {
+                    if (projectModal.classList.contains('hidden')) return;
+
+                    gsap.timeline({
+                        onComplete: () => {
+                            projectModal.classList.add('hidden');
+                            projectModal.setAttribute('aria-hidden', 'true');
+                            projectModalImg.src = '';
+                            projectModalImg.alt = '';
+                            document.body.style.overflow = '';
+                            if (lenis && typeof lenis.start === 'function') lenis.start();
+                            if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+                                lastFocusedElement.focus();
+                            }
+                            lastFocusedElement = null;
+                        }
+                    })
+                        .to(projectModalPanel, { opacity: 0, scale: 0.96, y: 8, duration: 0.2, ease: "power2.in" }, 0)
+                        .to(projectModalBackdrop, { opacity: 0, duration: 0.2, ease: "power2.in" }, 0);
+                };
+
+                document.querySelectorAll('[data-project-card]').forEach((card) => {
+                    const img = card.querySelector('img');
+                    if (!img) return;
+                    card.addEventListener('click', () => openProjectModal(img.currentSrc || img.src, img.alt));
+                    card.addEventListener('keydown', (e) => {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            openProjectModal(img.currentSrc || img.src, img.alt);
+                        }
+                    });
+                });
+
+                projectModalBackdrop.addEventListener('click', closeProjectModal);
+                projectModalClose.addEventListener('click', closeProjectModal);
+                window.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape') closeProjectModal();
+                });
+            };
+
+            window.addEventListener('DOMContentLoaded', initProjectModal);
+
+        </script>
+
+        <!-- Modal pratinjau proyek (foto saja) -->
+        <div id="project-modal" class="fixed inset-0 z-[70] hidden" role="dialog" aria-modal="true"
+            aria-label="Pratinjau proyek" aria-hidden="true">
+            <div id="project-modal-backdrop" class="absolute inset-0 bg-black/70"></div>
+            <div class="relative h-full w-full flex items-center justify-center p-4">
+                <div id="project-modal-panel" class="relative w-[92vw] max-w-5xl">
+                    <button id="project-modal-close" type="button"
+                        class="absolute -top-3 -right-3 w-10 h-10 rounded-full bg-white text-primary border border-black/10 shadow-sm flex items-center justify-center"
+                        aria-label="Tutup pratinjau">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="currentColor"
+                            aria-hidden="true">
+                            <path
+                                d="M18.3 5.71a1 1 0 0 0-1.41 0L12 10.59 7.11 5.7A1 1 0 0 0 5.7 7.11L10.59 12 5.7 16.89a1 1 0 1 0 1.41 1.41L12 13.41l4.89 4.89a1 1 0 0 0 1.41-1.41L13.41 12l4.89-4.89a1 1 0 0 0 0-1.4Z" />
+                        </svg>
+                    </button>
+                    <img id="project-modal-img" src="" alt=""
+                        class="w-full h-auto max-h-[85vh] object-contain rounded-2xl bg-white shadow-2xl border border-black/10" />
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

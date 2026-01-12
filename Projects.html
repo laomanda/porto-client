@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyek Helmisari Dwi Putri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F3D2E',
+                        canvas: '#FAFAF8',
+                        accent: '#C9A24D',
+                        charcoal: '#2E2E2E'
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'editorial': '0 20px 40px rgba(15, 61, 46, 0.15)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --primary: #0f3d2e;
+            --accent: #c9a24d;
+            --bg: #f9faf8;
+            --card: #ffffff;
+            font-family: "Poppins", sans-serif;
+        }
+        * { box-sizing: border-box; }
+        body {
+            margin:0;
+            min-height:100vh;
+            background:var(--bg);
+            color:var(--primary);
+        }
+        header {
+            padding:2rem 1.5rem;
+            text-align:center;
+            background:linear-gradient(180deg, #0f3d2e, #0f3d2e 60%, rgba(15,61,46,0.5));
+            color:#fff;
+            position:sticky;
+            top:0;
+            z-index:5;
+        }
+        header h1 {
+            margin:0.2rem 0;
+            font-size:clamp(2rem,3vw,2.8rem);
+            letter-spacing:0.1em;
+        }
+        header p {
+            margin:0;
+            font-size:0.95rem;
+            opacity:0.85;
+        }
+        main {
+            padding:2rem 1.5rem 4rem;
+        }
+        .masonry {
+            column-count:1;
+            column-gap:1.25rem;
+        }
+        @media (min-width:600px) {
+            .masonry { column-count:2; }
+        }
+        @media (min-width:1000px) {
+            .masonry { column-count:3; }
+        }
+        .card {
+            background:var(--card);
+            border-radius:1.25rem;
+            margin:0 0 1.25rem;
+            padding-bottom:1rem;
+            overflow:hidden;
+            box-shadow:0 10px 30px rgba(15,61,46,0.1);
+            border:1px solid rgba(15,61,46,0.05);
+            display:inline-block;
+            width:100%;
+            cursor:pointer;
+            transition:transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        .card:hover {
+            transform:translateY(-6px);
+            box-shadow:0 20px 40px rgba(15,61,46,0.15);
+        }
+        .card img {
+            width:100%;
+            display:block;
+            border-bottom:1px solid rgba(15,61,46,0.05);
+        }
+        .card-body {
+            padding:1rem 1.25rem;
+        }
+        .card-body h4 {
+            margin:0;
+            font-size:1rem;
+            font-weight:600;
+            letter-spacing:0.05em;
+        }
+        .card-body p {
+            margin:0.35rem 0 0;
+            font-size:0.85rem;
+            color:rgba(15,61,46,0.7);
+        }
+        .modal {
+            position:fixed;
+            inset:0;
+            background:rgba(0,0,0,0.7);
+            display:none;
+            align-items:center;
+            justify-content:center;
+            padding:2rem;
+            z-index:30;
+        }
+        .modal.show { display:flex; }
+        .modal img {
+            max-width:min(80vw,800px);
+            max-height:min(80vh,80%);
+            border-radius:1rem;
+            box-shadow:0 30px 60px rgba(0,0,0,0.35);
+            transform:scale(0.9);
+            opacity:0;
+            transition:transform 0.35s ease, opacity 0.35s ease;
+        }
+        .modal.show img {
+            transform:scale(1);
+            opacity:1;
+        }
+        .modal-close {
+            position:absolute;
+            top:1rem;
+            right:1rem;
+            width:40px;
+            height:40px;
+            border-radius:999px;
+            background:var(--card);
+            border:none;
+            cursor:pointer;
+            box-shadow:0 10px 30px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+    <nav class="fixed top-3 left-0 w-full z-50">
+        <div class="container mx-auto px-4">
+            <div class="bg-primary border border-black/10 rounded-full shadow-sm text-white flex items-center justify-between gap-4 px-5 py-3">
+                <a href="index.html" class="flex items-center gap-3">
+                    <span class="w-10 h-10 rounded-full bg-accent text-primary flex items-center justify-center font-bold">H</span>
+                    <span class="font-semibold tracking-tight">Helmisari.</span>
+                </a>
+                <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+                    <a href="index.html" class="flex items-center gap-2 hover:text-accent transition-colors"><i class="fa-solid fa-house"></i> Beranda</a>
+                    <a href="index.html#about" class="flex items-center gap-2 hover:text-accent transition-colors"><i class="fa-solid fa-user"></i> Tentang</a>
+                    <a href="index.html#expertise" class="flex items-center gap-2 hover:text-accent transition-colors"><i class="fa-solid fa-layer-group"></i> Keahlian</a>
+                    <a href="index.html#experience" class="flex items-center gap-2 hover:text-accent transition-colors"><i class="fa-solid fa-briefcase"></i> Pengalaman</a>
+                    <a href="index.html#case-studies" class="flex items-center gap-2 hover:text-accent transition-colors"><i class="fa-solid fa-diagram-project"></i> Proyek</a>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="index.html#contact" class="flex items-center gap-2 rounded-full bg-white px-5 py-2 text-sm font-semibold text-primary shadow-lg border border-white/25 hover:bg-white/90 transition-colors">
+                        <i class="fa-regular fa-envelope"></i> Kontak Saya
+                    </a>
+                    <button id="projects-mobile-btn" class="md:hidden text-white">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="projects-mobile-menu" class="hidden mt-3 rounded-3xl bg-primary/95 overflow-hidden text-white shadow-xl">
+                <a href="index.html" class="block px-6 py-4 border-b border-white/10 hover:bg-white/10">Beranda</a>
+                <a href="index.html#about" class="block px-6 py-4 border-b border-white/10 hover:bg-white/10">Tentang</a>
+                <a href="index.html#expertise" class="block px-6 py-4 border-b border-white/10 hover:bg-white/10">Keahlian</a>
+                <a href="index.html#experience" class="block px-6 py-4 border-b border-white/10 hover:bg-white/10">Pengalaman</a>
+                <a href="index.html#case-studies" class="block px-6 py-4 border-b border-white/10 hover:bg-white/10">Proyek</a>
+                <a href="index.html#contact" class="block px-6 py-4 hover:bg-white/10">Kontak Saya</a>
+            </div>
+        </div>
+    </nav>
+    <div class="h-24"></div>
+    <main>
+        <div class="masonry">
+            <article class="card" data-src="Penyaluran.jpeg">
+                <img src="Penyaluran.jpeg" alt="Penyaluran">
+            </article>
+            <article class="card" data-src="E-Bulletin.jpeg">
+                <img src="E-Bulletin.jpeg" alt="E-Bulletin">
+            </article>
+            <article class="card" data-src="CS.jpeg">
+                <img src="CS.jpeg" alt="Customer Service">
+            </article>
+            <article class="card" data-src="Crm.jpeg">
+                <img src="Crm.jpeg" alt="CRM">
+            </article>
+            <article class="card" data-src="Content-1.jpeg">
+                <img src="Content-1.jpeg" alt="Konten Edukasi 1">
+            </article>
+            <article class="card" data-src="Content-2.jpeg">
+                <img src="Content-2.jpeg" alt="Konten Edukasi 2">
+            </article>
+            <article class="card" data-src="Berita-1.jpeg">
+                <img src="Berita-1.jpeg" alt="Press Release 1">
+            </article>
+            <article class="card" data-src="Berita-2.jpeg">
+                <img src="Berita-2.jpeg" alt="Press Release 2">
+            </article>
+            <article class="card" data-src="Berita.jpeg">
+                <img src="Berita.jpeg" alt="Berita Online">
+            </article>
+            <article class="card" data-src="HUT22.jpeg">
+                <img src="HUT22.jpeg" alt="HUT BAZNAS">
+            </article>
+            <article class="card" data-src="Baznas.jpeg">
+                <img src="Baznas.jpeg" alt="Publikasi BAZNAS">
+            </article>
+            <article class="card" data-src="CarFreeDay.jpeg">
+                <img src="CarFreeDay.jpeg" alt="Hari Bebas Kendaraan">
+            </article>
+        </div>
+    </main>
+    <div class="modal" id="project-modal" aria-hidden="true">
+        <button class="modal-close" aria-label="Tutup galeri">&times;</button>
+        <img src="" alt="" id="project-modal-img">
+    </div>
+    <script>
+        const modal = document.getElementById("project-modal");
+        const modalImg = document.getElementById("project-modal-img");
+        const cards = document.querySelectorAll(".card");
+        const closeBtn = document.querySelector(".modal-close");
+        cards.forEach(card => {
+            card.addEventListener("click", () => {
+                modalImg.src = card.dataset.src;
+                modal.setAttribute("aria-hidden","false");
+                modal.classList.add("show");
+            });
+        });
+        const closeModal = () => {
+            modal.classList.remove("show");
+            modal.setAttribute("aria-hidden","true");
+            modalImg.src = "";
+        };
+        closeBtn.addEventListener("click", closeModal);
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) closeModal();
+        });
+        window.addEventListener("keydown", (e) => {
+            if (e.key === "Escape" && modal.classList.contains("show")) closeModal();
+        });
+        const mobileBtn = document.getElementById('projects-mobile-btn');
+        const mobileMenu = document.getElementById('projects-mobile-menu');
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
