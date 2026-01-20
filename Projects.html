@@ -33,6 +33,61 @@
         }
     </script>
     <style>
+        /* Bilah gulir tipis bernuansa batu tulis (minimal, tanpa gradasi) */
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #94a3b8 #f1f5f9;
+        }
+
+        html::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+
+        html::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background-color: #94a3b8;
+            border-radius: 999px;
+            border: 2px solid #f1f5f9;
+        }
+
+        html::-webkit-scrollbar-thumb:hover {
+            background-color: #64748b;
+        }
+
+        /* Bilah Progres Gulir */
+        #scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background-color: var(--primary);
+            width: 0%;
+            z-index: 9999;
+            transition: width 0.1s ease-out;
+        }
+
+        /* Perbaikan Gulir Halus Lenis */
+        html.lenis,
+        html.lenis body {
+            height: auto;
+        }
+
+        .lenis.lenis-smooth {
+            scroll-behavior: auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent] {
+            overscroll-behavior: contain;
+        }
+
+        .lenis.lenis-stopped {
+            overflow: hidden;
+        }
+
         :root {
             --primary: #0f3d2e;
             --accent: #c9a24d;
@@ -171,6 +226,8 @@
 </head>
 
 <body>
+    <!-- Indikator Progres Gulir -->
+    <div id="scroll-progress"></div>
     <nav class="fixed top-3 left-0 w-full z-50">
         <div class="container mx-auto px-4">
             <div
@@ -193,7 +250,7 @@
                             class="fa-solid fa-briefcase"></i> Pengalaman</a>
                     <a href="index.html#case-studies"
                         class="flex items-center gap-2 hover:text-accent transition-colors"><i
-                            class="fa-solid fa-diagram-project"></i> Proyek</a>
+                            class="fa-solid fa-diagram-project"></i> Projek Dan Galeri</a>
                 </div>
                 <div class="flex items-center gap-3">
                     <a href="index.html#contact"
@@ -303,6 +360,15 @@
             <article class="card" data-src="Puncak.jpeg">
                 <img src="Puncak.jpeg" alt="Puncak">
             </article>
+            <article class="card" data-src="Bersama.jpeg">
+                <img src="Bersama.jpeg" alt="Foto Bersama Tim">
+            </article>
+            <article class="card" data-src="Foto-Anak.jpeg">
+                <img src="Foto-Anak.jpeg" alt="Kegiatan Anak">
+            </article>
+            <article class="card" data-src="Foto-Anak-1.jpeg">
+                <img src="Foto-Anak-1.jpeg" alt="Program Anak">
+            </article>
         </div>
     </main>
     <div class="modal" id="project-modal" aria-hidden="true">
@@ -332,6 +398,14 @@
         const mobileMenu = document.getElementById('projects-mobile-menu');
         mobileBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Logika Progres Gulir
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-progress").style.width = scrolled + "%";
         });
     </script>
 </body>
